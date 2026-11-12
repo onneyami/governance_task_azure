@@ -1,10 +1,6 @@
-# Target Resource Group
-resource "azurerm_resource_group" "lab" {
-  name     = var.rg_name
-  location = var.location
-  tags = {
-    Environment = var.environment_tag
-  }
+# Reference the existing Resource Group
+data "azurerm_resource_group" "lab" {
+  name = var.rg_name
 }
 
 # Test User in Entra ID for group interns
