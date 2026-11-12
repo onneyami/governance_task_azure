@@ -18,6 +18,6 @@ variable "environment_tag" {
 
 variable "allowed_location" {
   type        = string
-  default     = "eastus" # Replace with a region returned by your Allowed locations policy
+  default     = "westeurope" 
   description = "Azure region permitted by the subscription's Allowed locations policy"
 }
