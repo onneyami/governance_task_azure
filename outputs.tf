@@ -4,6 +4,6 @@ output "resource_group_id" {
 }
 
 output "intern_group_id" {
-  value       = data.azuread_group.interns.object_id
+  value       = azuread_group.interns.object_id
   description = "Object ID of the interns Entra ID group"
 }
