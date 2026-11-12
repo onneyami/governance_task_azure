@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "lab" {
   }
 }
 
-# Test User in Entra ID
+# Test User in Entra ID for group interns
 resource "azuread_user" "intern_test" {
   user_principal_name = "test.intern@${data.azuread_domains.default.domains[0].domain_name}"
   display_name        = "Test Intern"
@@ -15,7 +15,7 @@ resource "azuread_user" "intern_test" {
   password            = "TempP@ssw0rd2026!"
 }
 
-# Entra ID Security Group
+# Entra ID Security Group interns
 resource "azuread_group" "interns" {
   display_name     = "interns"
   security_enabled = true
