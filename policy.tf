@@ -32,7 +32,7 @@ resource "azurerm_role_assignment" "policy_mi_tag_contributor" {
 resource "azurerm_storage_account" "non_compliant_sa" {
   name                     = "stnoncomplab2026"
   resource_group_name      = data.azurerm_resource_group.lab.name
-  location                 = data.azurerm_resource_group.lab.location
+  location                 = var.allowed_location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
