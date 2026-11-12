@@ -17,3 +17,9 @@ provider "azurerm" {
 }
 
 provider "azuread" {}
+
+data "azurerm_subscription" "current" {}
+
+data "azuread_domains" "default" {
+  only_default = true
+}
