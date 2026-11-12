@@ -15,3 +15,9 @@ variable "environment_tag" {
   default     = "Lab"
   description = "Default environment tag value"
 }
+
+variable "allowed_location" {
+  type        = string
+  default     = "eastus" # Replace with a region returned by your Allowed locations policy
+  description = "Azure region permitted by the subscription's Allowed locations policy"
+}

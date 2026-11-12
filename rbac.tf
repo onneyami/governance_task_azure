@@ -2,7 +2,7 @@
 resource "azurerm_role_assignment" "interns_reader" {
   scope                = data.azurerm_resource_group.lab.id
   role_definition_name = "Reader"
-  principal_id         = azuread_group.interns.object_id
+  principal_id         = azurerm_user_assigned_identity.intern_principal.principal_id
 }
 
 # Custom Role Definition with Minimal Read Permissions for group interns
@@ -31,5 +31,5 @@ resource "azurerm_role_definition" "minimal_reader" {
 resource "azurerm_role_assignment" "interns_custom_reader" {
   scope              = data.azurerm_resource_group.lab.id
   role_definition_id = azurerm_role_definition.minimal_reader.role_definition_resource_id
-  principal_id       = azuread_group.interns.object_id
+  principal_id       = azurerm_user_assigned_identity.intern_principal.principal_id
 }
